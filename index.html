@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mai Phuong EDU - Nền tảng Giáo dục Thông minh</title>
+    <style>
+        /* Advanced CSS */
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #4CAF50;
+            --accent-color: #FFC107;
+            --text-color: #2d3436;
+            --light-bg: #f8f9fa;
+        }
+
+        /* Dashboard Layout */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--primary-color);
+            padding: 1.5rem;
+            color: white;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .sidebar-menu li {
+            margin: 1rem 0;
+        }
+
+        .sidebar-menu a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            background: var(--light-bg);
+        }
+
+        /* Course Progress */
+        .progress-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .progress-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            width: 75%;
+            transition: width 0.5s ease;
+        }
+
+        /* Calendar */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            background: white;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .calendar-day:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Assignment Section */
+        .assignment-list {
+            margin: 2rem 0;
+        }
+
+.assignment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.badge-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Discussion Forum */
+.forum-thread {
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.thread-meta {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadein {
+    animation: fadeIn 0.5s ease-out;
+}
+</style>
+</head>
+<body>
+<div class="dashboard-container">
+<!-- Sidebar -->
+<aside class="sidebar animate-fadein">
+    <h2>Mai Phương Edu</h2>
+    <ul class="sidebar-menu">
+        <li><a href="#"><span>📚</span>Khóa học của tôi</a></li>
+        <li><a href="#"><span>📅</span>Lịch học</a></li>
+        <li><a href="#"><span>📝</span>Bài tập</a></li>
+        <li><a href="#"><span>💬</span>Thảo luận</a></li>
+        <li><a href="#"><span>📊</span>Thống kê</a></li>
+        <li><a href="#"><span>⚙️</span>Cài đặt</a></li>
+    </ul>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+    <h1>Trang chủ</h1>
+    
+    <!-- Progress Section -->
+    <section class="progress-container">
+        <div class="progress-card">
+            <h3>Lập trình Python</h3>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span>75% Hoàn thành</span>
+        </div>
+        <!-- Thêm các khóa học khác -->
+    </section>
+
+    <!-- Calendar -->
+    <section>
+        <h2>Lịch học tập</h2>
+        
+            <div class="study-schedule">
+                <h3>Lịch Học Tập</h3>
+                <ul>
+                    <li><strong>7:30 - 8:30 AM:</strong> Ăn sáng</li>
+                    <li><strong>8:30 - 11:00 AM:</strong> Học tập</li>
+                    <li><strong>11:00 - 11:30 AM:</strong> Nghỉ</li>
+                    <li><strong>11:30 AM - 2:00 PM:</strong> Ăn trưa & Nghỉ ngơi</li>
+                    <li><strong>2:00 - 5:00 PM:</strong> Tự học</li>
+                    <li><strong>5:15 - 7:15 PM:</strong> Lớp học thêm</li>
+                    <li><strong>7:15 - 8:15 PM:</strong> Ăn tối</li>
+                    <li><strong>8:15 - 10:00 PM:</strong> Học tập</li>
+                    <li><strong>10:00 - 10:30 PM:</strong> Giải trí</li>
+                </ul>
+            </div>
+            
+            <style>
+                .study-schedule {
+                    max-width: 300px;
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    font-family: Arial, sans-serif;
+                }
+                .study-schedule h3 {
+                    text-align: center;
+                    color: #333;
+                }
+                .study-schedule ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                .study-schedule li {
+                    padding: 8px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .study-schedule li:last-child {
+                    border-bottom: none;
+                }
+            </style>
+            
+    </section>
+
+    <!-- Assignments -->
+    <section class="assignment-list">
+        <h2>Bài tập gần đây</h2>
+        <div class="assignment-item">
+            <div>
+                <h3>Bài tập Toán rời rạc</h3>
+                <p>Hạn chót: 15/02/2025</p>
+            </div>
+            <span class="badge badge-primary">Chưa nộp</span>
+        </div>
+        <!-- Thêm bài tập khác -->
+    </section>
+
+    <!-- Discussion Forum -->
+    <section class="forum-section">
+        <h2>Diễn đàn thảo luận</h2>
+        <div class="forum-thread">
+            <h3>Cách giải bài tập mảng 2 chiều?</h3>
+            <div class="thread-meta">
+                <span>Bởi: Nguyễn Văn A</span>
+                <span>📅 2 giờ trước</span>
+                <span>💬 15 bình luận</span>
+            </div>
+        </div>
+        <!-- Thêm thread khác -->
+    </section>
+</main>
+</div>
+
+<!-- Interactive Components -->
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+}
+
+// Progress animation
+document.querySelectorAll('.progress-fill').forEach(progress => {
+    progress.style.width = progress.parentElement.getAttribute('data-progress');
+});
+</script>
+<div class="footer">
+    <h3>Giới Thiệu Nhóm Phát Triển</h3>
+    <p>Trang web này được phát triển bởi <strong>Nhóm Milo</strong>, gồm các thành viên:</p>
+    <ul>
+        <li><strong>Nguyễn Thành Đạt</strong> - Lập trình viên</li>
+        <li><strong>Nguyễn Hoàng Bách</strong> - Thiết kế giao diện</li>
+        <li><strong>Vi Hiếu Nghĩa</strong> - Quản lý nội dung</li>
+    </ul>
+    <p>Liên hệ: <a href="https://www.facebook.com/profile.php?id=100084324757448">Facebook : Hiếu Nghĩa</a></p>
+</div>
+
+<style>
+    .footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+    }
+    .footer h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer li {
+        margin: 5px 0;
+    }
+    .footer a {
+        color: #1e90ff;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</body>
+</html>
